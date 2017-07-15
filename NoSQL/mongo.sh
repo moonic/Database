@@ -12,7 +12,6 @@ db.getMongo() 当前db的链接机器地址
 
 
 用户
-
 show users 
 
 db.addUser("")
@@ -42,11 +41,11 @@ post = {"title" : "Hello word MongoDB",
 		"conter" : "Here s my blog",
 		"date" : new Date()}
 
-db.blog.insert(post) 插入到集合中
+db.blog.insert(post) #插入到集合中
 db.blog.insert( {"thins" : ["pin" , 3.14]} )
 db.blog.save()
-db.collection.insertOne():向指定集合中插入一条文档数据
-db.collection.insertMany():向指定集合中插入多条文档数据
+db.collection.insertOne() #向指定集合中插入一条文档数据
+db.collection.insertMany() #向指定集合中插入多条文档数据
 
 post.comments = []
 db.blog.update({"title" : "my blog post"},post)
@@ -103,10 +102,10 @@ db.blog.update( {"name" : "jack"}, {"$addToSet" : {"emails" : "jon@3.com"}})
 $addToSet + $each 
  db.blog.update( {"name" : "jack"}, {"$addToSet" : {"emails" : {"$each" : ["jon@php.com","jon@java.com"]}}})
 
-$pop 队列删除
+$pop #队列删除
 db.blog.update({"name" : "jack"}, {"$pop" : {"emails" : 1 }})
 
-$pull 匹配删除
+$pull #匹配删除
 db.lists.save({"todo" : ["dis","lang" , "dry"]})
  db.lists.update({},{"$pull" : {"todo" : "lang"}})
 
