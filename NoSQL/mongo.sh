@@ -120,6 +120,23 @@ db.dropDatebase()
 
 
 
+# 查找find
+db.users.save({"name" : "jack" , "age" : 20 ,"email" : "tom@1.com"})
+db.users.find() 
+db.users.find({"age" : 20})
+db.users.find("name" : 1)
+db.users.find({},{"name" : 1})
+db.users.find({},{"name" : 1,"_id" : 0}) #指定返回
+
+# 查询条件
+$it  < 
+$lte <= db.users.find({"age" : {"$lte" : 20, "$it" : 30}})
+$gt  > 
+$gte >= db.users.find({"age" : {"$gt" : 20, "$lte" : 30}})
+
+$ne
+db.users.find({"name" : {"$ne" : "jack"}})
+
 
 
 Collection聚集集合
