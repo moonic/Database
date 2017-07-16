@@ -657,7 +657,7 @@ $set 修改器
 
 
 查询文档
-	
+```sh
 	find 
 
 		db.c.find()
@@ -912,7 +912,7 @@ domceunt
 		doc = processes(doc);
 		db.foo.save(doc);
 	}
-
+```
 
 
 	Indexs 
