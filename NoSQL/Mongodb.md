@@ -2246,7 +2246,7 @@ GridFs save Files
     		config.collections 分片的集合
     		config.chunks 集群的数据块
     		config.changelog 集群的操作日志文档
-
+		
     	应该连接什么
     		执行读写操作或管理操作的答案永远是mongs任何的
     			可以是无状态的，但永远是mongs 不是分片和配置服务器
