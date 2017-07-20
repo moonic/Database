@@ -70,6 +70,12 @@ db.nums.save({ "_id" :3, "name" : "Jon Doe", "address" :{ "street" : "123 Park S
 { "_id" : 2, "item" : "Unknown", "price" : NumberLong(0) }
 { "_id" : 3, "item" : "XYZ", "price" : NumberLong(50) }
 { "_id" : 1, "item" : "apple", "price" : 13.7375, "defaultQty" : 100 }
+> db.scores.find()
+{ "_id" : 1, "highScore" : 800, "lowScore" : 250 }
+
+> db.survey.find()
+{ "_id" : 1, "scores" : [ 2 ] }
+{ "_id" : 2, "scores" : [ 2, 5, 5 ] }
 
 db.collection.insertOne():向指定集合中插入一条文档数据
 db.collection.insertMany():向指定集合中插入多条文档数据
