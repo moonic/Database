@@ -136,4 +136,26 @@ db.persion.find().sort()
 -----------------------------------
 
 
+------------ update --------------
+{
+   update: <collection>,
+   updates:
+      [
+         { q: <query>, u: <update>, upsert: <boolean>, multi: <boolean>, collation: <document> },
+         { q: <query>, u: <update>, upsert: <boolean>, multi: <boolean>, collation: <document> },
+         { q: <query>, u: <update>, upsert: <boolean>, multi: <boolean>, collation: <document> },
+         ...
+      ],
+   ordered: <boolean>,
+   writeConcern: { <write concern> },
+   bypassDocumentValidation: <boolean>
+}
+
+{
+  $set: { key: "value" },
+  $inc: { key: int(2) }  -- 多的增 少的动
+}
+
+-------------------
+
 
