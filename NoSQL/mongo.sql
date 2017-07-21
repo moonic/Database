@@ -155,7 +155,11 @@ db.persion.find().sort()
   $set: { key: "value" },
   $inc: { key: int(2) }  -- 多的增 少的动
 }
-
+db.psersion.update({_id: 1},{$inc: {age: 2}}) 
+db.psersion.update({_id: 1},{$set: {age: 23}}) 
+--注意执行顺序 set的更改大于inc
 -------------------
 
-
+-------- delete -------------
+db.persion.remove({key: value})
+--------------------------
