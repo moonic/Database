@@ -56,6 +56,7 @@ I 内嵌文档 key: {"document"}
    writeConcern: { <write concern> },
    bypassDocumentValidation: <boolean>
 }
+
 db.persion.insert({_id: 1,name: "jock",age: 20,date: Date(), elam: "jack@cure.com"})
 db.persion.insert({_id: 2,name: "tom",age: 15,date:  Date(), elam: "tom@cure.com"})
 db.persion.insert({_id: 3,name: "tiem",age: 25,date: Date(), elam: "tiem@cure.com"})
@@ -155,6 +156,10 @@ db.persion.find().sort()
   $set: { key: "value" },
   $inc: { key: int(2) }  -- 多的增 少的动
 }
+db.collection.updateOne(<filter>, <update>, <options>)
+db.collection.updateMany(<filter>, <update>, <options>)
+db.collection.replaceOne(<filter>, <replacement>, <options>)
+
 db.psersion.update({_id: 1},{$inc: {age: 2}}) 
 db.psersion.update({_id: 1},{$set: {age: 23}}) 
 --注意执行顺序 set的更改大于inc
@@ -162,4 +167,5 @@ db.psersion.update({_id: 1},{$set: {age: 23}})
 
 -------- delete -------------
 db.persion.remove({key: value})
+
 --------------------------
