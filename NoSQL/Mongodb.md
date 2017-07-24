@@ -83,7 +83,7 @@ Mongodb
 		列入在JavaScript最后文档表示为对象
 
 	一个键的文档
-
+	
 		{"greeting":"Hello word"}
 	
 	多个键值对
@@ -344,38 +344,6 @@ objectld
 	db.mailing.list.remove({"opt-out":true})
 
 	永久性的不能撤销，不能恢复
-
-删除速度
-
-	删除文档会很块，直接删除集合然后重建索引
-
-	python 
-
-		for i in range(1000000):
-			collection.insert({"foo":"bar":i."z":10 - i})
-
-	简单的删除
-
-	impoort time 
-
-	from pymongo import connection 
-
-	db.connection().foo
-	collection = db.bar
-
-	start = time.time()
-
-	collection.remove()
-	collection.find_one()
-
-	total = time.time() -start
-	print "%d seconds" % total
-	46.8m 
-
-	db.drop_connection("bar")
-	0.01 m
-
-	集合索引都被删除
 
 
 文档替换
