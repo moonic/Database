@@ -117,16 +117,12 @@ execute shell
 	可以定义和调用JavaScript函数
 
 
-shell 是一个独立的客户端 会丽娜姐服务器的test数据库
-	将数据复制给全局变量 db 
-
-	非JavaScript的语法 扩展方便 sql shell 
+* shell 是一个独立的客户端 会丽娜姐服务器的test数据库
+	* 将数据复制给全局变量 db 
+	* 非JavaScript的语法 扩展方便 sql shell 
 
 	use foobar 
-
-	db 
-
-
+	
 shell 操作
 	create 
 		insert function document save map 
@@ -154,7 +150,7 @@ shell 操作
 	// 查看一个文档
 
 
-update 
+* update 
 
 	psot.comments = []
 
@@ -162,7 +158,7 @@ update
 
 	db.blog.find()
 
-delete
+* delete
 	
 	remove 永久性的删除文档
 
@@ -173,12 +169,12 @@ mongo 是 javscript shell 通过查看 javascript 文档获得很多帮助
 db.help() 查看数据库级别的命令帮助
 db.foo.help()
 
-了解函数公用的技巧在输入的时候不输入括号就会显示函数的源代码
+* 了解函数公用的技巧在输入的时候不输入括号就会显示函数的源代码
 
 db.foo.update
 
 
-奇怪的集合名
+* 奇怪的集合名
 
 db.集合名来访问集合一般不会有问题集合刚好是数据库类的属性就会有问题
 
@@ -213,33 +209,23 @@ data type
 	支持多种数据类型作为文档的值
 
 
-基本数据类型
-
-	类似json 在JavaScript 中对象
-
-	null ,boolean,number,String,Array , object type
-
-
-
-MongoDB有3 种数字类型 (int32,int64 ,folat64)
+* 基本数据类型
+	* MongoDB有3 种数字类型 (int32,int64 ,folat64)
 
 doc = db.nums.findOne()
-
 
 插入的整数不能精却作为双精度显示会添加二个键表示位数
 
 db.nums,findOne()
 
-
-数组
-
-一组值，可以作为有序对象来操作，也可以作为无序对象来操作
+* 数组
+	* 一组值，可以作为有序对象来操作，也可以作为无序对象来操作
 
 	{"things":["pie",3.14]}
 
 	可以包含不同类型的元素
 
-内嵌文档
+* 内嵌文档
 
 {
 	"name" : "Jon Doe",
@@ -248,17 +234,14 @@ db.nums,findOne()
 		"street":"123 Park Street"
 		"city" : "Anytown",
 		"state" : "NY"
-
 	}
-
 }
-
 
 _id and objectld
 	_id key 可以是任何数据类型的默认为这个对象，唯一的保证这个
 	是唯一标识
 
-objectld
+* objectld
 
 	_id 的默认类型 
 
@@ -267,19 +250,19 @@ objectld
 占用 12个字节的存储空间，美国字节二位十六进制数字，是一个24位的字符串
 是实际存储数据的二倍长
 
-每个文档都有唯一的 _id 来确保每个都能被标识 都有一个值
+* 每个文档都有唯一的 _id 来确保每个都能被标识 都有一个值
 	
 	如果插入没有id会自动创建一个，可以用服务器来做这件事，是产生的时候额外开销
 
 	在客户端生成obejctid 可以插入文档
 
 
-插入并保存文档
+* 插入并保存文档
 
 	db.foo.insert({"bar":"baz"})
 
 
-批量插入
+* 批量插入
 
 	应用程序中，一次插入数百个窗前采集点到分析集合
 	只有插入到多个文档是集合的时候这个方法才有效
@@ -288,7 +271,7 @@ objectld
 	消息长度最大是16mb
 
 
-原理和作用
+* 原理和作用
 
 	将数据装成BSON 形式的然后将其送入数据库，不做别的验证
 		允许插入无效的数据，让数据库更加安全
@@ -296,7 +279,7 @@ objectld
 	所有主流鱼鱼会在传递数据进行有效的测验
 
 
-删除 文档
+* 删除 文档
 	
 	db.users.remove()
 
@@ -305,7 +288,7 @@ objectld
 	永久性的不能撤销，不能恢复
 
 
-文档替换
+* 文档替换
 
 	var joe = db.users.findOne({'name:"joe'}};
 	joe.relationships = {"frieds":joe.griends,"enemies":joe.enemies };
@@ -336,18 +319,8 @@ objectld
 	db.people.update({"name":"joe"},joe);
 
 
-使用修改器
-
-	利用原子更新修改器
-
-	db.analytics.update({"url":"www.example.com"})
-
-	db.analytics.find()
-
-	perl and PHP 别的字母不是$ 记好了 一开始是设计给JavaScript的数据库
-
-
-$set 修改器
+* 使用修改器
+	* $set 修改器
 
 	db.users.findOne()
 
