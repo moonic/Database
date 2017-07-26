@@ -173,19 +173,15 @@ db.foo.find({"$where" : "this.x + this.y == 10" })
 db.foo.save({"apple" : 1,"banan" : 6, "peach" : 3 })
 db.foo.save({"apple" : 8,"spinach" : 4, "water" : 4 })
 
-
 limit skip sort 
 
 db.foo.find().limit() 前面个数
 db.foo.find().skip()  除去前面个数
 db.foo.find().sort() 1 -1 排序
 
-
 $rename 
 db.students.save()
 db.students.updateMany( {},{ $rename : { "nmae" : "name" } } )
-
-
 
 Index 
 # 每次DDL操作 而外开销 在集合中的索引标记 每个集合最大索引64个
@@ -206,12 +202,3 @@ db.createCollection(“collName”, {size: 20, capped: 5, max: 100})
 db.getCollection("account") 指定名称的聚集集合
 db.getCollectionNames()	db的所有聚集集合
 db.printCollectionStats() 聚集索引的状态
-
-数字类型 32bit 64bit 64folat bit
-doc = db.nums.findOne()
-db.nums.insert({ "name" : "Jon Doe", "address" : {
-    "street" : "123 Park Street",
-    "city" : "Anytown",
-    "state" : "NY"
-}
-})
