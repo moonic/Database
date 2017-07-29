@@ -365,7 +365,7 @@ _id and objectld
 
 			insert key type , key on create key 
 
-		建立一个游戏集合，将游戏的变化分布在存储数据库中
+* 建立一个游戏集合，将游戏的变化分布在存储数据库中
 			可以出入一个包含游戏名好玩家文档标识不同的游戏
 
 		db.games.insert({"game":"pinball","user":"joe"})
@@ -469,7 +469,7 @@ _id and objectld
 					for i in range(1000)
 						collection.update({},{"$inc":{"x"1}})
 
-		使用修改器 $push 的修改器是推荐使用的，可以将内嵌数组独立起来发在一个集合
+* 使用修改器 $push 的修改器是推荐使用的，可以将内嵌数组独立起来发在一个集合
 
 		updert 更新
 			没有文档个性条件，就会创建一个新的文档
@@ -539,7 +539,7 @@ _id and objectld
 
 		db.processes.findOne()
 
-	findAndModify 命令对应的值如下
+* findAndModify 命令对应的值如下
 		query 查询文档 用来所寻找 文档条件
 
 		sort 
@@ -555,7 +555,8 @@ _id and objectld
 			boolean 类型返回的文档是更新后的文档
 
 
-查询文档
+* 查询文档
+
 ```sh
 	find 
 
@@ -645,7 +646,6 @@ domceunt
 			// 可以为前缀正则表达式 查询创建的缩影 这个类型的会非常高效 
 
 			db.foo.insert({"bar":/baz/})
-
 			db.foo.find({"bar":/baz/ })
 
 
@@ -684,7 +684,6 @@ domceunt
 		$slice 操作符
 			db.blog.posts.findOne(criteria,{"connection":{"$slice" : -10}})
 			// 也可以接偏移retuen lenght
-
 
 			db.blog.posts.findOne(criteria,{"comments":{"$slice": [23,10]}})
 
@@ -1968,9 +1967,8 @@ GridFs save Files
 
 	  		数据读写数据，让数据存储机制进来
 
-	 分片
-	 	集群上索引的管理工具是通过mongos 完成的
-	 		可以使用shell命令启动
+* 分片
+	* 集群上索引的管理工具是通过mongos 完成的 可以使用shell命令启动
 
 	 	$mongo -ny-0:27017/admin  // 打开端口
 	 	MongoDB shell version: 1.7.5
@@ -2155,3 +2153,83 @@ GridFs save Files
     			当机器数量过的时候网络就会越来越重要
     				要检查二台服务器的连接性
     		
+	
+	db.serverStatus()
+
+	锁信息
+
+		R 表示全局锁
+		W  全局写锁
+		r 数据读锁
+		w 数据库写锁
+
+	db.serverStatus().locks
+	{
+		{
+			"timeLockedMiros":{
+			"R":NumberLong(2532219), // 读锁的微妙数
+			"W":NumberLong(2022505) // 写锁的微妙数
+
+			}
+
+		}
+
+		"timecqyitingMicros":{
+			"R" : NumberLong(1489378), //启动全局读的总微妙数
+			"W" : NumberLong(361518), //启动全局写等待的微妙
+
+
+		}
+		"admin"{
+			"timeLockedMiros":{
+			"r":NumberLong(277350), // admin读锁的微妙数
+			"w":NumberLong(0) // admin 等待时间
+
+			}
+		}
+
+	}
+
+	全局锁信息
+		db.serverStatus().globalLock
+		{
+
+			"totalTime":NumberLogin("17205999990"),//启动持续
+			"lockTime":NumberLong(2031058) // 全局锁的时间
+			"currentQueue":{
+
+				"total":0, // 等待锁的格式
+				"readers":0, // 全局读锁等待的个数
+				"writers":0//全局写锁等待的个数 
+
+			}
+		}
+
+	内存锁信息
+
+		db.serverStatus().mem
+			{
+				"bits": , //操作系统位数
+				"resident":45792,
+				"virtual":326338, // 虚拟内存消耗 
+				"suooirted":true, // 支持额外信息
+				"mapped":161399   // 映射内存
+				"mappedWithJournal":   
+
+			}
+
+	额外信息
+		db.servlerStatus().extra_info{
+
+			"heap_usage_bytes" // 堆空间的字节数量 linux适用
+		}
+
+	索引统计信息
+		db.serverStatus().indexCounters{
+			"hist":25369213426
+			"misses":0 // 发现存在的内存次数
+			"rests":0, // 计算机重制
+			"missRatio":0 // 丢失
+
+
+		}
