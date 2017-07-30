@@ -178,8 +178,6 @@ db.inventory.insertMany( [
 
 db.collection.deleteMany()
 db.collection.deleteOne()
-
-
 db.persion.remove({key: value})
 
 --------------------------
