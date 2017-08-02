@@ -12,6 +12,7 @@ db.getMongo() 当前db的链接机器地址
 
 用户
 
+
 show users 
 
 db.addUser("")
