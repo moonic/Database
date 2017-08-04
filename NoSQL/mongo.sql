@@ -181,3 +181,34 @@ db.collection.deleteOne()
 db.persion.remove({key: value})
 
 --------------------------
+
+--------- 修饰符----------
+{ _id: 1, item: { name: "ab", code: "123" }, qty: 15, tags: [ "A", "B", "C" ] }
+{ _id: 2, item: { name: "cd", code: "123" }, qty: 20, tags: [ "B" ] }
+{ _id: 3, item: { name: "ij", code: "456" }, qty: 25, tags: [ "A", "B" ] }
+{ _id: 4, item: { name: "xy", code: "456" }, qty: 30, tags: [ "B", "A" ] }
+{ _id: 5, item: { name: "mn", code: "000" }, qty: 20, tags: [ [ "A", "B" ], "C" ] }
+
+$eq 匹配
+
+db.inventory.find( { tags: { $eq: "B" } } )
+db.inventory.find( { tags: "B" } )
+db.inventory.find( { tags: { $eq: [ "A", "B" ] } } )
+db.inventory.find( { tags: [ "A", "B" ] } )
+
+$gt  >
+Syntax: {field: {$gt: value} }
+db.inventory.find( { qty: { $gt: 20 } } )
+$ gte >=
+db.inventory.find( { qty: { $gte: 20 } } )
+$lte <=
+db.inventory.find( { qty: { $lte: 20 } } )
+$lt <
+db.inventory.find( { qty: { $lt: 20 } } )
+$ne =/
+db.inventory.find( { qty: { $ne: 20 } } )
+$in 与
+db.inventory.find( { qty: { $in: [ 5, 15 ] } } )
+$nin 或
+db.inventory.find( { qty: { $nin: [ 5, 15 ] } } )
+-------------------
