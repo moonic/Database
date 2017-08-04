@@ -212,3 +212,15 @@ db.inventory.find( { qty: { $in: [ 5, 15 ] } } )
 $nin 或
 db.inventory.find( { qty: { $nin: [ 5, 15 ] } } )
 -------------------
+
+
+------------Logical Query Operators----------------
+$or
+db.inventory.find( { $or: [ { quantity: { $lt: 20 } }, { price: 10 } ] } )
+$and 
+db.inventory.find( { $and: [ { price: { $ne: 1.99 } }, { price: { $exists: true } } ] } )
+$not
+db.inventory.find( { price: { $not: { $gt: 1.99 } } } )
+$nor
+db.inventory.find( { $nor: [ { price: 1.99 }, { sale: true } ]  } )
+-------------------------------------------------------
