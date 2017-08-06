@@ -137,7 +137,6 @@ db.persion.find().sort()
 
 -----------------------------------
 
-
 ------------ update --------------
 {
    update: <collection>,
@@ -211,7 +210,6 @@ $nin 或
 db.inventory.find( { qty: { $nin: [ 5, 15 ] } } )
 -------------------
 
-
 ------------Logical Query Operators----------------
 $or
 db.inventory.find( { $or: [ { quantity: { $lt: 20 } }, { price: 10 } ] } )
@@ -232,6 +230,5 @@ db.inventory.find( { qty: { $exists: true, $nin: [ 5, 15 ] } } )
 db.inventory.find( { qty: { $exists: true } } )
 
 $type
-
 
 ----------------------------------------------------
