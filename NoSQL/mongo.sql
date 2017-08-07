@@ -11,10 +11,10 @@
   
   
 ------  创建数据库------
-use foodar ; --创造并进入数据库
-show dbs ;   -- 查看数据库
-show collections ; --查看集合
-show tables ;     --仿SQL 查看集合
+use foodar  --创造并进入数据库
+show dbs    -- 查看数据库
+show collections  --查看集合
+show tables      --仿SQL 查看集合
 ------------------------
 
 --------- 数据库操作 ---------
