@@ -228,7 +228,4 @@ db.inventory.find( { $nor: [ { price: 1.99 }, { sale: true } ]  } )
  $exists
 db.inventory.find( { qty: { $exists: true, $nin: [ 5, 15 ] } } )
 db.inventory.find( { qty: { $exists: true } } )
-
-$type
-
 ----------------------------------------------------
