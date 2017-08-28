@@ -37,7 +37,7 @@
 	* 提供用户访问数据的交互视图
 
 
- type instruclor = record
+ type instruclor = record 
  	ID : char(5)
  	Name : char(5)
  	Dept_name : char(5)	
