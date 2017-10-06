@@ -236,7 +236,7 @@
 	查找数据库地址 x联系的内存地址	
 		* select memAddr from TranslationTable where dbAddr = x;
 	 数据库地址作为建的的散列可用在dbAddr 属性上建立索引返向查询
-		* select dbAddr From TranslationTable WHERE memAddr = y ;
+		* select dbAddr From TranslationTable WHERE memAddr = y;
 
 * 被定住的块
 	* 内存中的一个快不能安全的写回磁盘称为被钉住的 块首可用有指明的块是否被在二进制位
