@@ -6,7 +6,7 @@ db.foo.help() 集合相关命令
 db.foo.find() 文件
 db.user.help() 用户
 db.foo.update()
-db.stats()  数据库状态.
+db.stats()  数据库状态. 
 db.version() 当前db版本
 db.getMongo() 当前db的链接机器地址
 
@@ -38,7 +38,7 @@ db.createCollection('app', {'capped':true, 'size':10240, 'max':17855200})
 post = {"title" : "Hello word MongoDB",
 		"conter" : "Here s my blog",
 		"date" : Date()}
-
+ 
 db.blog.insert(post) 插入到集合中
 db.blog.insert( {"thins" : ["pin" , 3.14]} )
 db.blog.save()
@@ -171,34 +171,4 @@ db.foo.find({"$where" : "this.x + this.y == 10" })
 
 
 db.foo.save({"apple" : 1,"banan" : 6, "peach" : 3 })
-db.foo.save({"apple" : 8,"spinach" : 4, "water" : 4 })
-
-limit skip sort 
-
-db.foo.find().limit() 前面个数
-db.foo.find().skip()  除去前面个数
-db.foo.find().sort() 1 -1 排序
-
-$rename 
-db.students.save()
-db.students.updateMany( {},{ $rename : { "nmae" : "name" } } )
-
-Index 
-# 每次DDL操作 而外开销 在集合中的索引标记 每个集合最大索引64个
-db.users.ensureIndex({key : 1/-1})
-db.users.ensureIndex({key.array_lenghit: 1})
-
-# 删除集合 删除信息是永久的不能恢复
-
-db.name.remove({}) # 集合内所有文档 不会删除集合
-db.blog.remove({title : "my blog post"},post)
-db.drop_collcetion()
-db.name.drop()
-db.dropDatebase()
-
-Collection聚集集合
-创建一个聚集集合
-db.createCollection(“collName”, {size: 20, capped: 5, max: 100})
-db.getCollection("account") 指定名称的聚集集合
-db.getCollectionNames()	db的所有聚集集合
-db.printCollectionStats() 聚集索引的状态
+db.foo.save({"apple" : 8
