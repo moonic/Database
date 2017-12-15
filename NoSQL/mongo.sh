@@ -8,7 +8,7 @@ db.user.help() 用户
 db.foo.update()
 db.stats()  数据库状态. 
 db.version() 当前db版本
-db.getMongo() 当前db的链接机器地址
+db.getMongo() 当前db的链接机器地址 
 
 用户
 
