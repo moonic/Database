@@ -2,7 +2,6 @@
 >  O'Reilly Media Inc Unix x , Internet System option '
 
 * mongoDB 的易用性，分布式环境的单点下性能的海量数据支持的要求没有那么重要,要找到易用的
-
 * SourceForge execute mongodb save Auto Sharding 
 
 * 为什么要使用非关系型数据库
