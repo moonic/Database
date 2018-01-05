@@ -36,7 +36,7 @@
 		列入在JavaScript最后文档表示为对象
 
 	一个键的文档
-	
+	 
 		{"greeting":"Hello word"}
 	
 	多个键值对
